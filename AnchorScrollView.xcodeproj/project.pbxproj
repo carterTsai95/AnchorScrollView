@@ -13,6 +13,12 @@
 		AD7369CD28D78F5700EBE0F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369BB28D78F5500EBE0F0 /* ContentView.swift */; };
 		AD7369CE28D78F5700EBE0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7369BC28D78F5700EBE0F0 /* Assets.xcassets */; };
 		AD7369CF28D78F5700EBE0F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD7369BC28D78F5700EBE0F0 /* Assets.xcassets */; };
+		AD7369D928D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369D828D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift */; };
+		AD7369DA28D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369D828D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift */; };
+		AD7369DC28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369DB28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift */; };
+		AD7369DD28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369DB28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift */; };
+		AD7369DF28D7E19700EBE0F0 /* View + PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369DE28D7E19700EBE0F0 /* View + PreferenceKey.swift */; };
+		AD7369E028D7E19700EBE0F0 /* View + PreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369DE28D7E19700EBE0F0 /* View + PreferenceKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +28,9 @@
 		AD7369C128D78F5700EBE0F0 /* AnchorScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnchorScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7369C728D78F5700EBE0F0 /* AnchorScrollView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnchorScrollView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD7369C928D78F5700EBE0F0 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		AD7369D828D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorScrollViewContainerBuilder.swift; sourceTree = "<group>"; };
+		AD7369DB28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewContainerBuilder.swift; sourceTree = "<group>"; };
+		AD7369DE28D7E19700EBE0F0 /* View + PreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + PreferenceKey.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				AD7369BA28D78F5500EBE0F0 /* AnchorScrollViewApp.swift */,
+				AD7369D828D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift */,
+				AD7369DB28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift */,
+				AD7369DE28D7E19700EBE0F0 /* View + PreferenceKey.swift */,
 				AD7369BB28D78F5500EBE0F0 /* ContentView.swift */,
 				AD7369BC28D78F5700EBE0F0 /* Assets.xcassets */,
 			);
@@ -176,8 +188,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7369DF28D7E19700EBE0F0 /* View + PreferenceKey.swift in Sources */,
 				AD7369CC28D78F5700EBE0F0 /* ContentView.swift in Sources */,
 				AD7369CA28D78F5700EBE0F0 /* AnchorScrollViewApp.swift in Sources */,
+				AD7369DC28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift in Sources */,
+				AD7369D928D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,8 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD7369E028D7E19700EBE0F0 /* View + PreferenceKey.swift in Sources */,
 				AD7369CD28D78F5700EBE0F0 /* ContentView.swift in Sources */,
 				AD7369CB28D78F5700EBE0F0 /* AnchorScrollViewApp.swift in Sources */,
+				AD7369DD28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift in Sources */,
+				AD7369DA28D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
