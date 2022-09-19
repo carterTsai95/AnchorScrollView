@@ -21,7 +21,7 @@ struct ScrollViewContainerBuilder<C1: View, C2: View, C3: View, C4: View>: View 
             abs($0.1) <= abs($1.1)
         }?.key ?? 1
     }
-
+    
     private var horizontalBarSelectedItemOffset: CGFloat {
         let barItemWidth = horizantalBarItemWidth.filter({ $0.key < currentSelectedItemNumber })
         var totalXaxisOffset: CGFloat = 0
@@ -34,7 +34,7 @@ struct ScrollViewContainerBuilder<C1: View, C2: View, C3: View, C4: View>: View 
     private var selectedHorizontalItemWidth: CGFloat? {
         horizantalBarItemWidth[currentSelectedItemNumber]
     }
-
+    
     @State private var horizantalBarItemWidth: [Int: CGFloat] = [:]
     
     
@@ -52,26 +52,21 @@ struct ScrollViewContainerBuilder<C1: View, C2: View, C3: View, C4: View>: View 
     
     var body: some View {
         VStack(spacing: 0) {
-//            HStack {
-//                Text("Current item no: \(currentSelectedItemNumber)")
-//                    .padding(5)
-//                    .background(Color.white)
-//                Spacer()
-//            }
             ScrollViewReader { value in
                 ScrollView(.horizontal, showsIndicators: false) {
                     VStack(spacing: 3) {
-                        HStack(spacing: 0) {
+                        HStack(spacing: 2) {
                             Button {
                                 scrollAnchor.send(1)
                             } label: {
                                 Text(c1.title)
                                     .fontWeight(isSelected(1) ? .bold : .regular)
-                            }.id(1)
-                                .padding(.horizontal, 5)
-                                .getWidth { width in
-                                    horizantalBarItemWidth[1] = width
-                                }
+                            }
+                            .id(1)
+                            .padding(.horizontal, 5)
+                            .getWidth { width in
+                                horizantalBarItemWidth[1] = width
+                            }
                             
                             if let c2 = c2 {
                                 Button {

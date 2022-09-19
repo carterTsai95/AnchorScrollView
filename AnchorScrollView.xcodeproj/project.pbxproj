@@ -27,6 +27,16 @@
 		AD7369EC28D7E85D00EBE0F0 /* GetViewWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369EA28D7E85D00EBE0F0 /* GetViewWidth.swift */; };
 		AD7369EE28D7E88100EBE0F0 /* WidthPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369ED28D7E88100EBE0F0 /* WidthPreferenceKey.swift */; };
 		AD7369EF28D7E88100EBE0F0 /* WidthPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369ED28D7E88100EBE0F0 /* WidthPreferenceKey.swift */; };
+		AD7369F228D919F800EBE0F0 /* FoodItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369F128D919F800EBE0F0 /* FoodItemRowView.swift */; };
+		AD7369F328D919F800EBE0F0 /* FoodItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369F128D919F800EBE0F0 /* FoodItemRowView.swift */; };
+		AD7369F628D91C7C00EBE0F0 /* BreakfastItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369F528D91C7C00EBE0F0 /* BreakfastItemList.swift */; };
+		AD7369F728D91C7C00EBE0F0 /* BreakfastItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369F528D91C7C00EBE0F0 /* BreakfastItemList.swift */; };
+		AD7369F928D9236700EBE0F0 /* FastFoodItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369F828D9236700EBE0F0 /* FastFoodItemList.swift */; };
+		AD7369FA28D9236700EBE0F0 /* FastFoodItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369F828D9236700EBE0F0 /* FastFoodItemList.swift */; };
+		AD7369FC28D925B900EBE0F0 /* PizzaItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369FB28D925B900EBE0F0 /* PizzaItemList.swift */; };
+		AD7369FD28D925B900EBE0F0 /* PizzaItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369FB28D925B900EBE0F0 /* PizzaItemList.swift */; };
+		AD7369FF28D9267500EBE0F0 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369FE28D9267500EBE0F0 /* Food.swift */; };
+		AD736A0028D9267500EBE0F0 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7369FE28D9267500EBE0F0 /* Food.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +53,11 @@
 		AD7369E528D7E65200EBE0F0 /* AnchorScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnchorScrollView.swift; sourceTree = "<group>"; };
 		AD7369EA28D7E85D00EBE0F0 /* GetViewWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetViewWidth.swift; sourceTree = "<group>"; };
 		AD7369ED28D7E88100EBE0F0 /* WidthPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidthPreferenceKey.swift; sourceTree = "<group>"; };
+		AD7369F128D919F800EBE0F0 /* FoodItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodItemRowView.swift; sourceTree = "<group>"; };
+		AD7369F528D91C7C00EBE0F0 /* BreakfastItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakfastItemList.swift; sourceTree = "<group>"; };
+		AD7369F828D9236700EBE0F0 /* FastFoodItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastFoodItemList.swift; sourceTree = "<group>"; };
+		AD7369FB28D925B900EBE0F0 /* PizzaItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaItemList.swift; sourceTree = "<group>"; };
+		AD7369FE28D9267500EBE0F0 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +90,7 @@
 		AD7369B928D78F5500EBE0F0 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AD7369F028D919DF00EBE0F0 /* ExampleView */,
 				AD7369E128D7E58700EBE0F0 /* AnchorScrollView */,
 				AD7369BA28D78F5500EBE0F0 /* AnchorScrollViewApp.swift */,
 				AD7369BB28D78F5500EBE0F0 /* ContentView.swift */,
@@ -128,6 +144,34 @@
 				AD7369EA28D7E85D00EBE0F0 /* GetViewWidth.swift */,
 			);
 			path = "View + Extension";
+			sourceTree = "<group>";
+		};
+		AD7369F028D919DF00EBE0F0 /* ExampleView */ = {
+			isa = PBXGroup;
+			children = (
+				AD736A0128D9268B00EBE0F0 /* Model */,
+				AD7369F428D91C4D00EBE0F0 /* DummyFoodListView */,
+			);
+			path = ExampleView;
+			sourceTree = "<group>";
+		};
+		AD7369F428D91C4D00EBE0F0 /* DummyFoodListView */ = {
+			isa = PBXGroup;
+			children = (
+				AD7369F128D919F800EBE0F0 /* FoodItemRowView.swift */,
+				AD7369F528D91C7C00EBE0F0 /* BreakfastItemList.swift */,
+				AD7369F828D9236700EBE0F0 /* FastFoodItemList.swift */,
+				AD7369FB28D925B900EBE0F0 /* PizzaItemList.swift */,
+			);
+			path = DummyFoodListView;
+			sourceTree = "<group>";
+		};
+		AD736A0128D9268B00EBE0F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AD7369FE28D9267500EBE0F0 /* Food.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,12 +274,17 @@
 			files = (
 				AD7369EB28D7E85D00EBE0F0 /* GetViewWidth.swift in Sources */,
 				AD7369DF28D7E19700EBE0F0 /* ViewOffsetsKey.swift in Sources */,
+				AD7369F928D9236700EBE0F0 /* FastFoodItemList.swift in Sources */,
 				AD7369E328D7E59E00EBE0F0 /* ScrollViewContent.swift in Sources */,
 				AD7369CC28D78F5700EBE0F0 /* ContentView.swift in Sources */,
 				AD7369CA28D78F5700EBE0F0 /* AnchorScrollViewApp.swift in Sources */,
 				AD7369EE28D7E88100EBE0F0 /* WidthPreferenceKey.swift in Sources */,
+				AD7369FF28D9267500EBE0F0 /* Food.swift in Sources */,
+				AD7369F228D919F800EBE0F0 /* FoodItemRowView.swift in Sources */,
 				AD7369DC28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift in Sources */,
+				AD7369F628D91C7C00EBE0F0 /* BreakfastItemList.swift in Sources */,
 				AD7369E628D7E65200EBE0F0 /* AnchorScrollView.swift in Sources */,
+				AD7369FC28D925B900EBE0F0 /* PizzaItemList.swift in Sources */,
 				AD7369D928D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,12 +295,17 @@
 			files = (
 				AD7369EC28D7E85D00EBE0F0 /* GetViewWidth.swift in Sources */,
 				AD7369E028D7E19700EBE0F0 /* ViewOffsetsKey.swift in Sources */,
+				AD7369FA28D9236700EBE0F0 /* FastFoodItemList.swift in Sources */,
 				AD7369E428D7E59E00EBE0F0 /* ScrollViewContent.swift in Sources */,
 				AD7369CD28D78F5700EBE0F0 /* ContentView.swift in Sources */,
 				AD7369CB28D78F5700EBE0F0 /* AnchorScrollViewApp.swift in Sources */,
 				AD7369EF28D7E88100EBE0F0 /* WidthPreferenceKey.swift in Sources */,
+				AD736A0028D9267500EBE0F0 /* Food.swift in Sources */,
+				AD7369F328D919F800EBE0F0 /* FoodItemRowView.swift in Sources */,
 				AD7369DD28D7E0FD00EBE0F0 /* ScrollViewContainerBuilder.swift in Sources */,
+				AD7369F728D91C7C00EBE0F0 /* BreakfastItemList.swift in Sources */,
 				AD7369E728D7E65200EBE0F0 /* AnchorScrollView.swift in Sources */,
+				AD7369FD28D925B900EBE0F0 /* PizzaItemList.swift in Sources */,
 				AD7369DA28D7E05B00EBE0F0 /* AnchorScrollViewContainerBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
