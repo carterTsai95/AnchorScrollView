@@ -14,6 +14,14 @@ The header's indicator will change to corresponding section. Specially thanks to
 AnchorScrollView is consist by the AnchorScrollView and the ScrollViewContent which is the pure SwiftUI view. 
 With AnchorScrollView it can simply create the ScrollView with the auto-selected header for better user experience.
 
+## TODOs
+
+- [ ] Make the tab bar ability to customize
+- [ ] Using the View's extension to cleanup the each section(content)'s modifier in ScrollViewContainerBuilder
+- [ ] Finish remaining AnchorScrollView's initializer in order to support up to 10 contents.
+- [ ] Check the accessibility
+- [ ] Write the blogger for this view's inspiration and step to step tuturial
+
 Usage
 ```swift
 struct ExampleView: View {
