@@ -8,49 +8,52 @@
 import SwiftUI
 import Combine
 
-struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View {
-    var p1: ScrollViewContent<P1>
-    var p2: ScrollViewContent<P2>?
-    var p3: ScrollViewContent<P3>?
-    var p4: ScrollViewContent<P4>?
+struct ScrollViewContainerBuilder<C1: View, C2: View, C3: View, C4: View>: View {
+    var c1: ScrollViewContent<C1>
+    var c2: ScrollViewContent<C2>?
+    var c3: ScrollViewContent<C3>?
+    var c4: ScrollViewContent<C4>?
     @State private var scrollAnchor = CurrentValueSubject<Int, Never>(1)
     @State private var offsets: [Int: CGFloat] = [:]
     
-    private var currentItemNo: Int {
-        offsets.min { abs($0.1) <= abs($1.1) }?.key ?? 1
+    private var currentSelectedItemNumber: Int {
+        return offsets.min {
+            abs($0.1) <= abs($1.1)
+        }?.key ?? 1
     }
-    
-    private var barOffset: CGFloat {
-        let barItemWidth = horizantalBarItemWidth.filter({ $0.key < currentItemNo })
-        var tempOffset: CGFloat = 0
+
+    private var horizontalBarSelectedItemOffset: CGFloat {
+        let barItemWidth = horizantalBarItemWidth.filter({ $0.key < currentSelectedItemNumber })
+        var totalXaxisOffset: CGFloat = 0
         for barItemWidth in barItemWidth {
-            tempOffset += barItemWidth.value
+            totalXaxisOffset += barItemWidth.value
         }
-        return tempOffset
+        return totalXaxisOffset
     }
     
-    private var barWidth: CGFloat? {
-        horizantalBarItemWidth[currentItemNo]
+    private var selectedHorizontalItemWidth: CGFloat? {
+        horizantalBarItemWidth[currentSelectedItemNumber]
     }
+
     @State private var horizantalBarItemWidth: [Int: CGFloat] = [:]
     
     
     init(
-        p1: ScrollViewContent<P1>,
-        p2: ScrollViewContent<P2>?,
-        p3: ScrollViewContent<P3>?,
-        p4: ScrollViewContent<P4>?
+        c1: ScrollViewContent<C1>,
+        c2: ScrollViewContent<C2>?,
+        c3: ScrollViewContent<C3>?,
+        c4: ScrollViewContent<C4>?
     ) {
-        self.p1 = p1
-        self.p2 = p2
-        self.p3 = p3
-        self.p4 = p4
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = c3
+        self.c4 = c4
     }
     
     var body: some View {
         VStack(spacing: 0) {
 //            HStack {
-//                Text("Current item no: \(currentItemNo)")
+//                Text("Current item no: \(currentSelectedItemNumber)")
 //                    .padding(5)
 //                    .background(Color.white)
 //                Spacer()
@@ -62,18 +65,20 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
                             Button {
                                 scrollAnchor.send(1)
                             } label: {
-                                Text(p1.title)
+                                Text(c1.title)
+                                    .fontWeight(isSelected(1) ? .bold : .regular)
                             }.id(1)
                                 .padding(.horizontal, 5)
                                 .getWidth { width in
                                     horizantalBarItemWidth[1] = width
                                 }
                             
-                            if let p2 = p2 {
+                            if let c2 = c2 {
                                 Button {
                                     scrollAnchor.send(2)
                                 } label: {
-                                    Text(p2.title)
+                                    Text(c2.title)
+                                        .fontWeight(isSelected(2) ? .bold : .regular)
                                 }
                                 .id(2)
                                 .padding(.horizontal, 5)
@@ -82,11 +87,12 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
                                 }
                             }
                             
-                            if let p3 = p3 {
+                            if let c3 = c3 {
                                 Button {
                                     scrollAnchor.send(3)
                                 } label: {
-                                    Text(p3.title)
+                                    Text(c3.title)
+                                        .fontWeight(isSelected(3) ? .bold : .regular)
                                 }
                                 .id(3)
                                 .padding(.horizontal, 5)
@@ -95,11 +101,12 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
                                 }
                             }
                             
-                            if let p4 = p4 {
+                            if let c4 = c4 {
                                 Button {
                                     scrollAnchor.send(4)
                                 } label: {
-                                    Text(p4.title)
+                                    Text(c4.title)
+                                        .fontWeight(isSelected(4) ? .bold : .regular)
                                 }
                                 .id(4)
                                 .padding(.horizontal, 5)
@@ -109,20 +116,21 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
                             }
                         }
                         .fixedSize(horizontal: false, vertical: false)
+                        .foregroundColor(.black)
                         ZStack {
                             HStack(spacing: 0) {
                                 Rectangle()
                                     .cornerRadius(30)
                                     .foregroundColor(.pink)
-                                    .frame(width: barWidth, height: 3.0)
-                                    .offset(x: barOffset)
+                                    .frame(width: selectedHorizontalItemWidth, height: 3.0)
+                                    .offset(x: horizontalBarSelectedItemOffset)
                                     .animation(.linear)
                                 Spacer()
                             }
                         }
                     }
                 }
-                .onChange(of: currentItemNo) { newValue in
+                .onChange(of: currentSelectedItemNumber) { newValue in
                     withAnimation {
                         value.scrollTo(newValue, anchor: .leading)
                     }
@@ -132,7 +140,7 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
             ScrollViewReader { value in
                 ScrollView {
                     LazyVStack(spacing: 0) {
-                        p1.content
+                        c1.content
                             .id(1)
                             .background(
                                 GeometryReader { geo in
@@ -141,8 +149,8 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
                                         value: [1 : geo.frame(in: .named("scrollView")).origin.y]) }
                             )
                         
-                        if let p2 = p2 {
-                            p2.content
+                        if let c2 = c2 {
+                            c2.content
                                 .id(2)
                                 .background(
                                     GeometryReader { geo in
@@ -153,8 +161,8 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
                                 )
                         }
                         
-                        if let p3 = p3 {
-                            p3.content
+                        if let c3 = c3 {
+                            c3.content
                                 .id(3)
                                 .background(
                                     GeometryReader { geo in
@@ -165,8 +173,8 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
                                 )
                         }
                         
-                        if let p4 = p4 {
-                            p4.content
+                        if let c4 = c4 {
+                            c4.content
                                 .id(4)
                                 .background(
                                     GeometryReader { geo in
@@ -200,19 +208,25 @@ struct ScrollViewContainerBuilder<P1: View, P2: View, P3: View, P4: View>: View 
     }
 }
 
-extension ScrollViewContainerBuilder where P3 == EmptyView{
-    init(p1: ScrollViewContent<P1>, p2: ScrollViewContent<P2>?) {
-        self.p1 = p1
-        self.p2 = p2
-        self.p3 = nil
+extension ScrollViewContainerBuilder {
+    func isSelected(_ id: Int) -> Bool {
+        return id == currentSelectedItemNumber
     }
 }
 
-extension ScrollViewContainerBuilder where P4 == EmptyView {
-    init(p1: ScrollViewContent<P1>, p2: ScrollViewContent<P2>?, p3: ScrollViewContent<P3>?) {
-        self.p1 = p1
-        self.p2 = p2
-        self.p3 = p3
-        self.p4 = nil
+extension ScrollViewContainerBuilder where C3 == EmptyView{
+    init(c1: ScrollViewContent<C1>, c2: ScrollViewContent<C2>?) {
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = nil
+    }
+}
+
+extension ScrollViewContainerBuilder where C4 == EmptyView {
+    init(c1: ScrollViewContent<C1>, c2: ScrollViewContent<C2>?, c3: ScrollViewContent<C3>?) {
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = c3
+        self.c4 = nil
     }
 }

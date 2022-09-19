@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            AnchorScrollViewContainer {
+            AnchorScrollView {
                 ScrollViewContent(title: "|First Long Title|") {
                     Color.blue
                         .frame(height: 1200)
