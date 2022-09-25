@@ -8,11 +8,16 @@
 import SwiftUI
 import Combine
 
-struct ScrollViewContainerBuilder<C1: View, C2: View, C3: View, C4: View>: View {
+struct ScrollViewContainerBuilder<C1: View, C2: View, C3: View, C4: View, C5: View, C6: View, C7: View, C8: View, C9: View>: View {
     var c1: ScrollViewContent<C1>
     var c2: ScrollViewContent<C2>?
     var c3: ScrollViewContent<C3>?
     var c4: ScrollViewContent<C4>?
+    var c5: ScrollViewContent<C5>?
+    var c6: ScrollViewContent<C6>?
+    var c7: ScrollViewContent<C7>?
+    var c8: ScrollViewContent<C8>?
+    var c9: ScrollViewContent<C9>?
     @State private var scrollAnchor = CurrentValueSubject<Int, Never>(1)
     @State private var offsets: [Int: CGFloat] = [:]
     
@@ -42,12 +47,22 @@ struct ScrollViewContainerBuilder<C1: View, C2: View, C3: View, C4: View>: View 
         c1: ScrollViewContent<C1>,
         c2: ScrollViewContent<C2>?,
         c3: ScrollViewContent<C3>?,
-        c4: ScrollViewContent<C4>?
+        c4: ScrollViewContent<C4>?,
+        c5: ScrollViewContent<C5>?,
+        c6: ScrollViewContent<C6>?,
+        c7: ScrollViewContent<C7>?,
+        c8: ScrollViewContent<C8>?,
+        c9: ScrollViewContent<C9>?
     ) {
         self.c1 = c1
         self.c2 = c2
         self.c3 = c3
         self.c4 = c4
+        self.c5 = c5
+        self.c6 = c6
+        self.c7 = c7
+        self.c8 = c8
+        self.c9 = c9
     }
     
     var body: some View {
@@ -223,5 +238,96 @@ extension ScrollViewContainerBuilder where C4 == EmptyView {
         self.c2 = c2
         self.c3 = c3
         self.c4 = nil
+    }
+}
+
+extension ScrollViewContainerBuilder where C5 == EmptyView {
+    init(
+        c1: ScrollViewContent<C1>,
+        c2: ScrollViewContent<C2>?,
+        c3: ScrollViewContent<C3>?,
+        c4: ScrollViewContent<C4>?
+    ) {
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = c3
+        self.c4 = c4
+        self.c5 = nil
+    }
+}
+extension ScrollViewContainerBuilder where C6 == EmptyView {
+    init(
+        c1: ScrollViewContent<C1>,
+        c2: ScrollViewContent<C2>?,
+        c3: ScrollViewContent<C3>?,
+        c4: ScrollViewContent<C4>?,
+        c5: ScrollViewContent<C5>?
+    ) {
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = c3
+        self.c4 = c4
+        self.c5 = c5
+        self.c6 = nil
+    }
+}
+extension ScrollViewContainerBuilder where C7 == EmptyView {
+    init(
+        c1: ScrollViewContent<C1>,
+        c2: ScrollViewContent<C2>?,
+        c3: ScrollViewContent<C3>?,
+        c4: ScrollViewContent<C4>?,
+        c5: ScrollViewContent<C5>?,
+        c6: ScrollViewContent<C6>?
+    ) {
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = c3
+        self.c4 = c4
+        self.c5 = c5
+        self.c6 = c6
+        self.c7 = nil
+    }
+}
+extension ScrollViewContainerBuilder where C8 == EmptyView {
+    init(
+        c1: ScrollViewContent<C1>,
+        c2: ScrollViewContent<C2>?,
+        c3: ScrollViewContent<C3>?,
+        c4: ScrollViewContent<C4>?,
+        c5: ScrollViewContent<C5>?,
+        c6: ScrollViewContent<C6>?,
+        c7: ScrollViewContent<C7>?
+    ) {
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = c3
+        self.c4 = c4
+        self.c5 = c5
+        self.c6 = c6
+        self.c7 = c7
+        self.c8 = nil
+    }
+}
+extension ScrollViewContainerBuilder where C9 == EmptyView {
+    init(
+        c1: ScrollViewContent<C1>,
+        c2: ScrollViewContent<C2>?,
+        c3: ScrollViewContent<C3>?,
+        c4: ScrollViewContent<C4>?,
+        c5: ScrollViewContent<C5>?,
+        c6: ScrollViewContent<C6>?,
+        c7: ScrollViewContent<C7>?,
+        c8: ScrollViewContent<C8>?
+    ) {
+        self.c1 = c1
+        self.c2 = c2
+        self.c3 = c3
+        self.c4 = c4
+        self.c5 = c5
+        self.c6 = c6
+        self.c7 = c7
+        self.c8 = c8
+        self.c9 = nil
     }
 }

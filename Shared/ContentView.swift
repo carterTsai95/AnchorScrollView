@@ -23,6 +23,18 @@ struct ContentView: View {
                 ScrollViewContent(title: "|Waterloo Housemade Breakfast|") {
                     BreakfastItemList()
                 }
+                ScrollViewContent(title: "|Fast Food|") {
+                    FastFoodItemList()
+                }
+                ScrollViewContent(title: "|Cheezy-Up! Pizza|") {
+                    PizzaItemList()
+                }
+                ScrollViewContent(title: "|Waterloo Housemade Breakfast|") {
+                    BreakfastItemList()
+                }
+                ScrollViewContent(title: "|Cheezy-Up! Pizza|") {
+                    PizzaItemList()
+                }
             }
         }
     }
