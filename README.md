@@ -18,7 +18,7 @@ With AnchorScrollView it can simply create the ScrollView with the auto-selected
 
 - [ ] Make the tab bar ability to customize
 - [ ] Using the View's extension to cleanup the each section(content)'s modifier in ScrollViewContainerBuilder
-- [ ] Finish remaining AnchorScrollView's initializer in order to support up to 10 contents.
+- [x] Finish remaining AnchorScrollView's initializer in order to support up to 10 contents.
 - [ ] Check the accessibility
 - [ ] Write the blogger for this view's inspiration and step to step tuturial
 
